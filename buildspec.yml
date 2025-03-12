@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 22 # Set this to the Node.js version you need
+    commands:
+      # Install npm dependencies
+      - echo Installing dependencies...
+      - npm install
+
+  build:
+    commands:
+      - echo Building the application...
+      - npm run build
+      - pwd
+
+  post_build:
+    commands:
+      - echo Build completed successfully!
+      - ls
+
+artifacts:
+  files:
+    - 'build/**/*' 
+
+  # this is the test comment
